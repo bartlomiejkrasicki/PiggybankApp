@@ -1,0 +1,22 @@
+.edit-form-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+
+hr.title-line {
+    margin-bottom: 16px;
+}
+
+button.form-action-button {
+    float: right;
+    margin-left: 16px;
+    max-width: 30%;
+    min-width: 20%;
+}

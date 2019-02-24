@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.mat-sort-header-arrow {
+    color: #fff !important;
+}
+
+.mat-header-cell{
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+.mat-h4 {
+    margin: auto;
+    color: #FFF;
+}
+
+.mat-card {
+    width: auto;
+}
+
+.title-section {
+    height: 40px;
+    width: auto;
+    background-color: #3f51b5;
+    display: flex;
+    border-radius: 4px;
+}
+
+html {
+    height: 90%;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+
+footer {
+    width: auto;
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

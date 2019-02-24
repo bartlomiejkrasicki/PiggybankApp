@@ -1,0 +1,16 @@
+<div id="title-container">
+  <h1 class="mat-headline">Edit transaction</h1>
+</div>
+<hr class="title-line">
+
+<form [formGroup]="transactionForm">
+  <div class="delete-form-container">
+
+    <h3 class="mat-subheading-2">Are you sure you want to delete transaction?</h3>
+    <div>
+      <button class="form-action-button" mat-raised-button color="warn" (click)="closeDialog()">No</button>
+      <button class="form-action-button" mat-raised-button color="primary" [disabled]="transactionForm.invalid"
+        (click)="saveDialog()">Yes</button>
+    </div>
+  </div>
+</form>

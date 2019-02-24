@@ -1,0 +1,68 @@
+<div class="transaction-area">
+  <h2 class="mat-h2">List of transactions:</h2>
+  <div class="filter-area">
+    <form class="filters-form" [formGroup]="filtersForm">
+      <mat-form-field class="form-field">
+        <mat-select appearance="outline" class="input-form" [(ngModel)]="selectedType"
+          (selectionChange)="filterType($event.value)" placeholder="Type" formControlName="typeFilter">
+          <mat-option>---</mat-option>
+          <mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-select class="input-form" [(ngModel)]="selectedCategory" (selectionChange)="filterCategory($event.value)"
+          placeholder="Category" formControlName="categoryFilter">
+          <mat-option>---</mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <button id="add-transaction-button" mat-raised-button color="primary" (click)="openAddDialog()">Add
+    transaction</button>
+  <div class="mat-elevation-z8">
+    <form class="search-form" [formGroup]="searchForm">
+      <mat-form-field id="search">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search" formControlName="search">
+      </mat-form-field>
+    </form>
+    <mat-table id="transaction-table" [dataSource]="dataSource" matSortActive="addDate" matSortDirection="desc" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let transaction"> {{transaction.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+        <mat-cell *matCellDef="let transaction"> {{transaction.type}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let transaction"> {{transaction.amount}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+        <mat-cell *matCellDef="let transaction"> {{transaction.category}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="addDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+        <mat-cell *matCellDef="let transaction"> {{transaction.addDate | date : "yyyy-MM-dd"}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary"
+            (click)="openEditDialog(row.id, row.type, row.amount, row.category, row.addDate)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="openDeleteDialog(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10"></mat-paginator>
+  </div>
+  <h4 class="mat-h4" id="balance">Your balance: {{balance}}</h4>
+</div>

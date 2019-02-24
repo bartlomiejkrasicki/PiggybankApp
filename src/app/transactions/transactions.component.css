@@ -1,0 +1,70 @@
+.transaction-area {
+    display: table;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+}
+
+#add-transaction-button {
+    max-width: 20%;
+    float: right;
+    margin-bottom: 16px;
+    clear: both;
+}
+
+.mat-h2 {
+    background-color: #f44336;
+    color: #FFF;
+    float: left;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mat-elevation-z8{
+    clear: both;
+}
+
+.filter-area {
+    clear: both;
+    float: left;
+    max-width: 80%;
+}
+
+.filters-form {
+    background-color: #FFF;
+    border-radius: 4px;
+}
+
+.form-field {
+    margin: 0 auto;
+    display: inline-block;
+    min-width: 15%;
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-top: 15px;
+}
+
+#balance {
+    float: left;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 4px 10px;
+    color: #FFF;
+    border-radius: 4px;
+    background-color: #f44336;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 500;
+}
+
+#search {
+    margin-top: 16px;
+    margin-left: 16px;
+}
